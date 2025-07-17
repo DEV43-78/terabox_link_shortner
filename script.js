@@ -32,12 +32,9 @@ let auth, db;
 async function initializeFirebase() {
   try {
     const firebaseConfig = await fetchAndDecryptConfig();
-    console.log("Firebase Config:", firebaseConfig);
     const app = initializeApp(firebaseConfig);
     auth = getAuth(app);
-    console.log("Auth initialized:", auth);
     db = getDatabase(app);
-    console.log("Firebase initialized successfully");
     return true;
   } catch (error) {
     console.error("Firebase initialization failed:", error);
