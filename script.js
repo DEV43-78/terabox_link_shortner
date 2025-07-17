@@ -136,7 +136,6 @@ window.handleSignup = async () => {
     alert("Signup successful!");
     window.location.href = "/dashboard.html";
   } catch (error) {
-    console.log("Signup error:", error);
     alert("Signup failed: " + error.message);
   }
 };
@@ -169,7 +168,6 @@ window.handleLogin = async () => {
       alert("User data not found in database.");
     }
   } catch (error) {
-    console.log("Signup error:", error);
     alert("Login failed: " + error.message);
   }
 };

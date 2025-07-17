@@ -71,7 +71,6 @@ function loadUserProfile(emailKey) {
 
 // ✅ Auth State Check
 onAuthStateChanged(auth, (user) => {
-  console.log("🔍 Auth state changed:", user);
   if (!user) {
     loginOverlay.style.display = "flex";
     mainContent.classList.add("blurred");
