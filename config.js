@@ -6,7 +6,7 @@ export const fetchAndDecryptConfig = async () => {
   // Use environment-specific backend URL
   const BACKEND_URL = window.location.hostname === 'localhost' 
     ? "http://localhost:4000" 
-    : "https://terabox-link-shortner-backend.onrender.com"; // Replace with your actual backend URL
+    : "https://backend-outz.onrender.com"; // Replace with your actual backend URL
 
   const response = await fetch(`${BACKEND_URL}/firebase-config`);
   const { encrypted, iv } = await response.json();
