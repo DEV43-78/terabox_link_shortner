@@ -54,7 +54,7 @@ function generateZeroStats(days = 10) {
     const date = new Date(now);
     date.setDate(now.getDate() - i);
     const isoDate = date.toISOString().split("T")[0];
-    stats[isoDate] = { impressions: 0, earnings: 0 };
+    stats[isoDate] = { impressions: 0, earnings: 0, cpm: 0 };
   }
   return stats;
 }
@@ -88,7 +88,7 @@ window.handleSignup = async () => {
     const userData = {
       dashboard: {
         currentCPM: 0,
-        todayEarnings: 0,
+        totalavailable: 0,
         todayImpressions: 0,
         totalEarnings: 0,
         totalImpressions: 0,
@@ -96,6 +96,7 @@ window.handleSignup = async () => {
       },
       withdrawals: {
         totalWithdrawn: 0,
+        totalavailable: 0,
         requests: {
           "-initRequest": {
             method: "UPI",
