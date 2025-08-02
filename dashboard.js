@@ -10,6 +10,7 @@ const auth = getAuth(app);
 const db = getDatabase(app);
 
 // ✅ DOM Elements
+const totalavailableE1 = document.getElementById("totalavailable");
 const totalEarningsEl = document.getElementById("totalEarnings");
 const todayEarningsEl = document.getElementById("todayEarnings");
 const impressionsEl = document.getElementById("totalImpressions");
@@ -37,6 +38,7 @@ function loadDashboard(emailKey) {
     const data = snapshot.val();
     if (!data) return;
 
+    totalavailableEl.textContent = `₹${data.totalavailable ?? 0}`;
     totalEarningsEl.textContent = `₹${data.totalEarnings ?? 0}`;
     todayEarningsEl.textContent = `₹${data.todayEarnings ?? 0}`;
     impressionsEl.textContent = `${data.todayImpressions ?? data.totalImpressions ?? 0}`;
